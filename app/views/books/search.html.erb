@@ -1,0 +1,22 @@
+<h1>
+  検索結果
+</h1>
+<%# 検索結果の個数で条件分岐 %>
+<% if @results.length !=0 %>
+  <% @results.each do |result| %>
+    <td>
+    <br>
+    <li>
+      <%= result.category.name %>
+      <%= result.age %>
+      <%= result.emotion %>
+    </li>
+  <% end %>
+<% else %>
+  該当する商品はありません
+<% end %>
+<br>
+<div>
+  <%= image_tag "sample.jpeg", class: "book-img" %>
+</div>
+<%= link_to 'トップページへ戻る', root_path %>
